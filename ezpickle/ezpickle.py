@@ -7,7 +7,7 @@ saving Python objects to files in cPickle formats.
 """
 import cPickle
 
-def load_pickle(filename):
+def load(filename):
     """ Returns Python data from a cPickle formatted file.
 
     Arguments:
@@ -19,7 +19,7 @@ def load_pickle(filename):
 
     return p
 
-def save_pickle(data, filename):
+def save(data, filename):
     """ Saves about any Python data into a cPickle formatted file.
 
     Arguments:
@@ -31,6 +31,6 @@ def save_pickle(data, filename):
 
     """
 
-    with open(filename, "rb") as f:
+    with open(filename, "wb") as f:
         cPickle.dump(data, f, protocol=2)
 
